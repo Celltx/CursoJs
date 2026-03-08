@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dom.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+<h2>Agregar comentario</h2>
+
+<input type="text" id="comentarioInput" placeholder="Escribe un comentario">
+<button id="btnAgregar">Agregar comentario</button>
+
+<h3>Comentarios</h3>
+<div id="listaComentarios"></div>
+
+<script>
+
+const input = document.getElementById("comentarioInput");
+const botonAgregar = document.getElementById("btnAgregar");
+const listaComentarios = document.getElementById("listaComentarios");
+
+botonAgregar.addEventListener("click", agregarComentario);
+
+
+function agregarComentario(){
+
+    const texto = input.value;
+
+    if(texto === ""){
+        alert("Escribe un comentario");
+        return;
+    }
+
+    const comentarioDiv = document.createElement("div");
+    comentarioDiv.classList.add("comentario");
+
+    const fecha = new Date();
+    const fechaTexto = fecha.toLocaleString();
+
+    const textoComentario = document.createElement("p");
+    textoComentario.textContent = texto;
+
+    const fechaComentario = document.createElement("p");
+    fechaComentario.textContent = fechaTexto;
+    fechaComentario.classList.add("fecha");
+
+    const botonEliminar = document.createElement("button");
+    botonEliminar.textContent = "Eliminar";
+
+    botonEliminar.addEventListener("click", function(){
+        comentarioDiv.remove();
+    });
+
+    comentarioDiv.appendChild(textoComentario);
+    comentarioDiv.appendChild(fechaComentario);
+    comentarioDiv.appendChild(botonEliminar);
+
+    listaComentarios.appendChild(comentarioDiv);
+
+    input.value = "";
+
+}
+
+</script>
+
+</body>
+</html>
