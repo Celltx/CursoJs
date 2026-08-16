@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #08070b;
+    color: #e6e5ea;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #817f88;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.generator {
+    width: 100%;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    background: #24232b;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+}
+
+.password-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #e6e5ea;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.password-container input::placeholder {
+    color: #817f88;
+}
+
+#copyBtn {
+    border: none;
+    background: transparent;
+    color: #a4ffaf;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#copyBtn:hover {
+    transform: scale(1.1);
+}
+
+.options {
+    background: #24232b;
+    padding: 25px;
+}
+
+.length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.length-container label {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#lengthValue {
+    color: #a4ffaf;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 25px;
+    accent-color: #a4ffaf;
+    cursor: pointer;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 18px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkbox input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e6e5ea;
+    cursor: pointer;
+}
+
+.checkbox input:checked {
+    background: #a4ffaf;
+    border-color: #a4ffaf;
+    position: relative;
+}
+
+.checkbox input:checked::after {
+    content: "✓";
+    color: #18171f;
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    left: 2px;
+    top: -1px;
+}
+
+.strength {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #18171f;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.strength > span {
+    color: #817f88;
+    font-weight: bold;
+}
+
+.strength-indicator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#strengthText {
+    font-weight: bold;
+}
+
+.strength-bars {
+    display: flex;
+    gap: 5px;
+}
+
+.strength-bars span {
+    width: 8px;
+    height: 25px;
+    border: 2px solid #e6e5ea;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 18px;
+    margin-top: 20px;
+    border: 2px solid #a4ffaf;
+    background: #a4ffaf;
+    color: #18171f;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.generate-btn span {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.generate-btn:hover {
+    background: transparent;
+    color: #a4ffaf;
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    .password-container input {
+        font-size: 20px;
+    }
+
+    .options {
+        padding: 20px;
+    }
+
+    .strength {
+        padding: 15px;
+    }
+
+    .strength-indicator {
+        gap: 8px;
+    }
+}
